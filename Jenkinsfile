@@ -16,5 +16,10 @@ pipeline {
                 }
             }
         }
+		stage('Deliver') {
+            steps {
+                powershell 'java -jar target/*.jar'
+            }
+        }
     }
 }
