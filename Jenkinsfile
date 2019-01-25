@@ -23,6 +23,7 @@ pipeline {
 				$Name
                 mkdir ./target/Server | Out-Null
 				copy  ./target/$Name ./target/Server/$Name | Out-Null
+				Write-Output "OUTPUT :"
 				java -jar ./target/Server/$Name
 				''')
             }
