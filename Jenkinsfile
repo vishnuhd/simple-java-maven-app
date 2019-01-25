@@ -19,8 +19,7 @@ pipeline {
 		stage('Deliver') {
             steps {
                 powershell ('''
-				$Name = (ls ./target/*.jar).Name 
-				$Name
+				$Name = (ls ./target/*.jar).Name
                 mkdir ./target/Server | Out-Null
 				copy  ./target/$Name ./target/Server/$Name | Out-Null
 				Write-Output "OUTPUT :"
