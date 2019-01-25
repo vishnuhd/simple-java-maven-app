@@ -21,7 +21,9 @@ pipeline {
                 powershell ('''
 				$Name = (ls ./target/*.jar).Name 
 				$Name
-				java -jar $Name
+                mkdir ./target/Server
+				copy  ./target/$Name ./target/Server/$Name
+				java -jar ./target/Server/$Name
 				''')
             }
         }
