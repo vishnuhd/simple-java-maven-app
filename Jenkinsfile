@@ -19,7 +19,7 @@ pipeline {
 		stage('Deliver') {
             steps {
                 powershell ('''
-				$Name = (ls .\target\*.jar).Name 
+				$Name = (ls ./target/*.jar).Name 
 				java -jar $Name
 				''')
             }
