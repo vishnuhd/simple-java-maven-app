@@ -21,7 +21,7 @@ pipeline {
                 powershell ('''
 				$Name = (ls ./target/*.jar).Name 
 				$Name
-				#java -jar $Name
+				java -jar $Name
 				''')
             }
         }
