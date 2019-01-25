@@ -18,7 +18,9 @@ pipeline {
         }
 		stage('Deliver') {
             steps {
-                powershell 'java -jar target/*.jar'
+                powershell '
+				$Name = (ls .\target\*.jar).Name
+				java -jar $Name'
             }
         }
     }
