@@ -22,7 +22,7 @@ pipeline {
 				$Name = (ls ./target/*.jar).Name 
 				$Name
                 mkdir ./target/Server
-				copy  ./target/$Name ./target/Server/$Name
+				copy  ./target/$Name ./target/Server/$Name | Out-Null
 				java -jar ./target/Server/$Name
 				''')
             }
